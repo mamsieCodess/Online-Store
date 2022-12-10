@@ -4,12 +4,12 @@
     <section id="team">
 
         <div>
-        <h6>Amancio Ortega - <span>founder</span></h6>
+        <h6>Amancio Ortega <span>founder</span></h6>
             <img src="https://flying-dutchman.net/wp-content/uploads/2021/03/Amancio-Ortega-scaled.jpg" alt="">
             
         </div>
         <div>
-        <h6>Rosalia Mera - <span>co-founder</span></h6>
+        <h6>Rosalia Mera <span>co-founder</span></h6>
             <img src="https://imageio.forbes.com/specials-images/imageserve/70e206fb1fbe09eceb0617d193652f84/0x0.jpg?format=jpg&height=416&width=416&fit=bounds" alt="">
             
         </div>
