@@ -185,11 +185,61 @@
             background-repeat: no-repeat;
             opacity: 0.5;
         }
+
+        .about-page{
+            margin:110px 0;
+            height:max-content;
+            color:white;
+            padding: 20px;
+            background-color: rgb(255,255,255,0.1);
+        }
+        .about-page h2{
+            text-align: center;
+            color: #ff1e00;
+            font-family: "Lexend Giga", sans-serif;
+            
+        }
+        #team span{
+            color:#ff1e00;
+        }
+
+        #team{
+            display: flex;
+            justify-content: center;
+        }
+        #team img {
+            width:200px;
+            padding-left:20px;
+        }
+
+        #mission_vision{
+            text-align: center;
+           
+
+        }
+        .about-page h5{
+            padding: 20px;
+        }
+        
+        .about-page section{
+            padding: 20px;
+        }
         .contact-page {
             margin-top:100px;
-            height: 500px;
-            background: url("includes/images/2359910009_9_1_1.jpg");
-            opacity: 0.5;
+           height: fit-content;
+           padding: 40px 100px ;
+           text-align: center;
+        }
+        
+        i{
+            font-size: 45px;
+        }
+        .contact-page a{
+            text-decoration: none;
+            color:#ff1e00;
+        }
+        .contact-page a:hover{
+            color:white;
         }
 
         .footer {
@@ -246,6 +296,10 @@
 
             .featured-products {
                 margin: 0;
+            }
+
+            .about-page{
+                margin-top: 150px;
             }
 
             .contact-page {
@@ -328,7 +382,7 @@
                 break;
 
             case 'about':
-                include_once __DIR__ . "/views/lookbook.php";
+                include_once __DIR__ . "/views/about.php";
                 break;
 
             case 'contact':
