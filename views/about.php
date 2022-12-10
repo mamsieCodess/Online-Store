@@ -1,22 +1,22 @@
 <div class="about-page">
-    <h2>Team</h2>
+    <h2>TEAM</h2>
 
     <section id="team">
 
         <div>
-
+        <h6>Amancio Ortega - <span>founder</span></h6>
             <img src="https://flying-dutchman.net/wp-content/uploads/2021/03/Amancio-Ortega-scaled.jpg" alt="">
-            <h6>Amancio Ortega - <span>founder</span></h6>
+            
         </div>
         <div>
-
+        <h6>Rosalia Mera - <span>co-founder</span></h6>
             <img src="https://imageio.forbes.com/specials-images/imageserve/70e206fb1fbe09eceb0617d193652f84/0x0.jpg?format=jpg&height=416&width=416&fit=bounds" alt="">
-            <h6>Rosalia Mera - <span>co-founder</span></h6>
+            
         </div>
 
     </section>
     <section id="mission_vision">
-        <h2>Mission and Vision Statement</h2>
+        <h2>MISSION AND VISION STATEMENT</h2>
         <p>
         <h5> Identifying Market Preferences</h5>
         Slay Dragons declares in the first part of its mission statement that it intends to give customers what they want, and Slay Dragons definitely means it. Other high fashion brands do not really make an effort to identify the preferences of the target market. This has actually been the culture in high fashion for decades. The designers simply come up with apparel that matches their own tastes and styles and expect that people will buy it simply because it is high fashion.
@@ -39,7 +39,7 @@
     </section>
 
     <section id="information">
-        <h2>Business brief</h2>
+        <h2>BUSINESS BRIEF</h2>
        
         <p>Slay Dragons is one of the largest international fashion companies. It belongs to Inditex, one of the world’s largest distribution groups.
 

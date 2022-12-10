@@ -8,12 +8,9 @@
     <title>SLAY DRAGONS</title>
     <script src="https://kit.fontawesome.com/648e6e8434.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /*@media screen and (min-width: 901px) from 901px and above */
-        * {
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lexend+Giga:wght@400;600&family=Montserrat+Alternates&display=swap" rel="stylesheet">        /*@media screen and (min-width: 901px) from 901px and above */
+       
+<style>* {
             box-sizing: border-box;
         }
 
@@ -21,8 +18,9 @@
             margin: 0;
             background-color: black;
             color: white;
-            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        }
+            font-family: 'Montserrat Alternates', sans-serif;
+
+    }
 
         .header {
             display: flex;
@@ -35,11 +33,20 @@
             width: 100%;
             overflow: hidden;
             z-index: 2;
+            font-family: 'Julius Sans One', sans-serif;
         }
 
         .header a {
             text-decoration: none;
             color: white;
+        }
+        .menu button{
+            color: #ff1e00;
+            background-color: black;
+        }
+
+        .menu button:hover{
+            color:white;
         }
 
         li a:hover {
@@ -65,9 +72,6 @@
             list-style-type: none;
         }
 
-        li:hover {
-            color: #ff1e00;
-        }
 
         .cart-options {
             color: white;
@@ -82,6 +86,10 @@
             color: #ff1e00;
         }
 
+        .cart-options i:hover{
+            color: #ff1e00;
+        }
+
         .hero {
             height: 450px;
             display: flex;
@@ -89,6 +97,7 @@
             font-size: x-large;
             color: white;
             margin-top: 50px;
+            font-family: 'Julius Sans One', sans-serif;
         }
 
         .hero img {
@@ -192,12 +201,17 @@
             color:white;
             padding: 20px;
             background-color: rgb(255,255,255,0.1);
+           
         }
+
         .about-page h2{
             text-align: center;
             color: #ff1e00;
             font-family: "Lexend Giga", sans-serif;
             
+        }
+        #team > div{
+            padding:10px;
         }
         #team span{
             color:#ff1e00;
@@ -206,10 +220,11 @@
         #team{
             display: flex;
             justify-content: center;
+            font-family: 'Julius Sans One', sans-serif;
         }
         #team img {
             width:200px;
-            padding-left:20px;
+            height: 250px;
         }
 
         #mission_vision{
@@ -231,7 +246,7 @@
            text-align: center;
         }
         
-        i{
+        .contact-page i{
             font-size: 45px;
         }
         .contact-page a{
@@ -259,6 +274,7 @@
             /*between 900px and 400px*/
             .hero img {
                 width: 100%;
+              
             }
 
             #hero-heading {
@@ -267,6 +283,7 @@
 
             .hero {
                 margin-top: 140px;
+             
             }
 
             .header {
@@ -283,15 +300,12 @@
             .menu {
                 display: flex;
                 justify-content: center;
+                font-size:small;
             }
 
             .cart-options {
                 display: flex;
                 justify-content: center;
-            }
-
-            .header>div:hover {
-                border: 1px solid #ff1e00;
             }
 
             .featured-products {
@@ -359,8 +373,8 @@
         </div>
         <div class="cart-options">
             <ul>
-                <li><a href="#">CART</a> </li>
-                <li><a href="#">PROFILE</a> </li>
+                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><i class="fa-solid fa-user"></i> </li>
             </ul>
 
         </div>

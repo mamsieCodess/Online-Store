@@ -1,8 +1,11 @@
 
 
 <div class="contact-page"> 
+
 <span><i class="fa-solid fa-envelope"></i>
 <p><a href="mailto:slaydragons@gmail.com">slaydragons@gmail.com</a> </p></span>
+
+
 <span><i class="fa-solid fa-phone"></i>
 <p>+27 638 027 587</p></span>
 <span><i class="fa-solid fa-link"></i>
