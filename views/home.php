@@ -1,4 +1,4 @@
-<div class="hero">
+<div class="hero" style="background-color:black">
 
     <img src="includes/images/2359910009_9_1_1.jpg" alt="hero">
 
@@ -10,20 +10,20 @@
 
 <section class="featured-products">
     <h4>FEATURED PRODUCTS</h4>
-    <div class="grid-container">
-        <!--styles of occasions-->
-        <div class="grid-item item1">
-            <p>Boot Heels</p>
-        </div>
-        <div class="grid-item item2">
-            <p>Flat Heels</p>
-        </div>
-        <div class="grid-item item3">
-            <p>Chunky Heels</p>
-        </div>
-        <div class="grid-item item4">
-            <p>Pointed Heels</p>
-        </div>
+    <div class="container">
+       <span>
+        <label>Platforms</label>
+        <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016"></span>
+        <span>
+        <label>Pointed Heels</label>
+        <img src="https://static.zara.net/photos///2022/I/1/1/p/2107/010/040/2/w/750/2107010040_6_1_1.jpg?ts=1667384988568"></span>
+        <span>
+        <label>Chunky</label>
+        <img src="https://static.zara.net/photos///2022/I/1/1/p/1344/010/070/2/w/750/1344010070_6_1_1.jpg?ts=1659970560343"></span>
+        <span>
+        <label>Block</label>
+        <img src="https://static.zara.net/photos///2022/V/1/1/p/3316/910/002/2/w/750/3316910002_6_1_1.jpg?ts=1646652791387"></span>
+      
     </div>
 
 </section>
