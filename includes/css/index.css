@@ -3,7 +3,6 @@
     box-sizing: border-box;
 }
 
-
 .header {
     display: flex;
     background-color: black;
@@ -23,14 +22,6 @@
     color: white;
 }
 
-.menu button {
-    color: #ff1e00;
-    background-color: black;
-}
-
-.menu button:hover {
-    color: white;
-}
 
 li a:hover {
     color: #ff1e00;
