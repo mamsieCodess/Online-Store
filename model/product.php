@@ -53,16 +53,6 @@ class Heels{
 
     }
 
-    public function setImage($image){
-        $this->image = $image;
-        return $this;
-    }
-    
-    public function getImage(){
-       return $this->image;
-
-    }
-
     public function setPrice($price){
         $this->price = $price;
         return $this;
