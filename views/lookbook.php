@@ -1,3 +1,12 @@
+<?php
+
+require_once __DIR__ . "./../includes/config/db.php";
+
+$sql = "SELECT `*` FROM `products`";
+$result = $conn->query($sql);
+$rows = $result->fetch_all(MYSQLI_BOTH);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,20 +19,58 @@
         .lookbook {
             margin-top: 100px;
             padding: 10px;
-            display:flex;
+            display: flex;
             justify-content: center;
             text-align: center;
-        }
-        .wrapper{
-            margin: 5px;
-        }
-        img{
-            width: 200px;
-            margin-bottom: 5px;
+            flex-wrap: wrap;
+            height: 300px;
         }
 
-        img:hover{
-            width:250px;
+        .wrapper {
+            margin: 5px;
+            position:relative;
+        }
+
+        img {
+            width: 250px;
+            height: 300px;
+            margin-bottom: 5px;
+            opacity: 1;
+            display: block;
+            width: 100%;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        img:hover {
+        height: 350px;
+        }
+
+
+        .form {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .wrapper:hover img {
+            opacity: 0.3;
+        }
+
+        .wrapper:hover .form {
+            opacity: 1;
+        }
+
+        .shop-button {
+            background-color: #04AA6D;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
         }
 
         @media screen and (max-width: 900px) {
@@ -35,37 +82,42 @@
 </head>
 
 <body>
+
+
+
     <div class="lookbook">
-        <div class="wrapper">
-            <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016" width="200px">
-        
+        <?php
 
-            <form action='' method='get'>
-                <input type='hidden' name='carId' value='" . $heel->getId() . "'>
-                <button type='submit' name='viewCar' value='true'>View</button>
-            </form>
+        require_once __DIR__ . "./../model/product.php";
+        session_start();
+        $_SESSION['products'] = [];
 
-        </div>
+        foreach ($rows as $row) {
+            $newHeels = new Heels(
+                $row['id'],
+                $row['name'],
+                $row['thumbnail'],
+                $row['look'],
+                $row['quantity'],
+                $row['price']
+            );
 
-        <div class="wrapper">
-            <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016" width="200px">
-            
-            <form action='' method='get'>
-                <input type='hidden' name='carId' value='" . $heel->getId() . "'>
-                <button type='submit' name='viewCar' value='true'>View</button>
-            </form>
+            array_push($_SESSION['products'], $newHeels);
+        }
 
-        </div>
-        <div class="wrapper">
-            <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016">
-         
-            
-            <form action='' method='get'>
-                <input type='hidden' name='carId' value='" . $heel->getId() . "'>
-                <button type='submit' name='viewCar' value='true'>View</button>
-            </form>
+        foreach ($_SESSION['products'] as $product) : ?>
 
-        </div>
+            <div class="wrapper">
+                <img src="<?php echo $product->getLook() ?>">
+                <div class="form">
+                    <form action='' method='get'>
+                        <button id="shop-button"><a href="views/shop.php?id=<?php echo htmlspecialchars($product->getId()) ?>">SHOP</button>
+                    </form>
+                </div>
+            </div>
+
+        <?php endforeach; ?>
+
 
     </div>
 </body>
