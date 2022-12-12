@@ -20,30 +20,28 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
             margin-top: 100px;
             padding: 10px;
             display: flex;
-            justify-content: center;
-            text-align: center;
-            flex-wrap: wrap;
-            height: 300px;
+            justify-content:space-around;
+            flex-wrap:wrap;
         }
 
         .wrapper {
             margin: 5px;
             position:relative;
+            height: 350px;
+            width: 250px;
+
         }
 
         img {
-            width: 250px;
+            width:200px;
             height: 300px;
-            margin-bottom: 5px;
             opacity: 1;
-            display: block;
-            width: 100%;
             transition: .5s ease;
-            backface-visibility: hidden;
         }
 
         img:hover {
         height: 350px;
+        width: 250px;
         }
 
 
@@ -55,22 +53,14 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
             left: 50%;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
-            text-align: center;
         }
 
         .wrapper:hover img {
-            opacity: 0.3;
+            opacity: 0.5;
         }
 
         .wrapper:hover .form {
             opacity: 1;
-        }
-
-        .shop-button {
-            background-color: #04AA6D;
-            color: white;
-            font-size: 16px;
-            padding: 16px 32px;
         }
 
         @media screen and (max-width: 900px) {
@@ -83,9 +73,8 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
 
 <body>
 
-
-
     <div class="lookbook">
+       
         <?php
 
         require_once __DIR__ . "./../model/product.php";
@@ -111,7 +100,7 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
                 <img src="<?php echo $product->getLook() ?>">
                 <div class="form">
                     <form action='' method='get'>
-                        <button id="shop-button"><a href="views/shop.php?id=<?php echo htmlspecialchars($product->getId()) ?>">SHOP</button>
+                        <button id="shop-button"><a href="views/shop.php?id=<?php echo htmlspecialchars($product->getId()) ?>">SHOP</a></button>
                     </form>
                 </div>
             </div>
@@ -120,6 +109,7 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
 
 
     </div>
+
 </body>
 
 </html>
