@@ -38,20 +38,9 @@
     font-family: "Lexend Giga", sans-serif;
 }
 
-#hero-subtitle span {
-    font-family: "Lexend Giga", sans-serif;
-    color: #ff1e00;
-}
 
-#hero-button-shop {
-    background-color: #ff1e00;
-    border: none;
-}
 
-#hero-button-shop:hover {
-    background-color: #ffffff;
-    color: #ff1e00;
-}
+
 @media screen and (max-width: 900px) {
 
 /*between 900px and 400px*/
@@ -92,7 +81,9 @@
 
     <div id="hero-heading">
         <p id="hero-title">CHASE DREAMS ... BUT IN HEELS</p>
-        <input type="submit" href="../views/shop.php" id="hero-button-shop" name="hero-button-shop" value="SHOP">
+
+        <button id="shop-button"> <a href="views/shop.php">SHOP</a></button>
+
     </div>
 </div>
 

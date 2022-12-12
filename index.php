@@ -12,8 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lexend+Giga:wght@400;600&family=Montserrat+Alternates&display=swap" rel="stylesheet">
 <style>
+  
     * {
   box-sizing: border-box;
+}
+body{
+  display: block;
+  justify-content: space-between;
+  overflow-y: scroll;
 }
 
 .header {
@@ -91,6 +97,26 @@ h4 {
   text-align: center;
 }
 
+#shop-button a{
+    text-decoration: none;
+    color:black;
+}
+
+#shop-button {
+    background-color: #ff1e00;
+}
+
+#shop-button:hover {
+    background-color: #ffffff;
+}
+
+#shop-button a:hover{
+   color:#ff1e00;
+}
+button{
+    border: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -145,6 +171,8 @@ h4 {
     max-height: 250px;
     padding: 20px;
   }
+
+  
 }
 
 @media screen and (max-width: 400px) {
