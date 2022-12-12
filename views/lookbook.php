@@ -19,6 +19,7 @@
         }
         img{
             width: 200px;
+            margin-bottom: 5px;
         }
 
         img:hover{
@@ -37,7 +38,7 @@
     <div class="lookbook">
         <div class="wrapper">
             <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016" width="200px">
-            <p>Price: R 1000</p>
+        
 
             <form action='' method='get'>
                 <input type='hidden' name='carId' value='" . $heel->getId() . "'>
@@ -48,7 +49,6 @@
 
         <div class="wrapper">
             <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016" width="200px">
-            <p>Price: R 1000</p>
             
             <form action='' method='get'>
                 <input type='hidden' name='carId' value='" . $heel->getId() . "'>
@@ -58,7 +58,7 @@
         </div>
         <div class="wrapper">
             <img src="https://static.zara.net/photos///2023/W/1/1/p/2337/010/202/2/w/750/2337010202_6_1_1.jpg?ts=1667908929016">
-            <p>Price: R 1000</p>
+         
             
             <form action='' method='get'>
                 <input type='hidden' name='carId' value='" . $heel->getId() . "'>
