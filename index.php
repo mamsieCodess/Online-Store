@@ -127,11 +127,10 @@ button{
 }
 
 .footer {
-  bottom: 0;
-  position: fixed;
   background-color: #ff1e00;
   text-align: center;
   width: 100%;
+  padding: 10px;
 }
 
 .footer p {
