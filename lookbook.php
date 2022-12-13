@@ -106,7 +106,7 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
         foreach ($_SESSION['products'] as $product) : ?>
 
             <div class="wrapper">
-                <img src="<?php echo $product->getLook() ?>">
+                <img src="<?php echo $product->getThumbnail() ?>">
                 <div class="form">
                     <form action='' method='get'>
                         <button id="shop-button"><a href="shop.php?id=<?php echo htmlspecialchars($product->getId()) ?>">SHOP</a></button>
