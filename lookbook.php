@@ -23,18 +23,17 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
         }
         .lookbook {
             margin-top: 100px;
-            padding: 10px;
+            padding: 50px 0;
             display: flex;
-            justify-content:space-around;
             flex-wrap:wrap;
+            justify-content:space-evenly;
         }
 
         .wrapper {
-            margin: 5px;
             position:relative;
             height: 350px;
             width: 250px;
-
+            margin: 10px;
         }
 
         img {
