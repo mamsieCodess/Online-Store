@@ -6,6 +6,7 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,20 +20,20 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
   <link rel="stylesheet" href="includes/css/styles.css">
   <title>Home</title>
   <style>
- .container{
-display: flex;
-flex-wrap:wrap;
-}
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-.container img {
-  height: 350px;
-  padding: 20px;
-}
-
+    .container img {
+      height: 350px;
+      padding: 20px;
+    }
   </style>
 </head>
+
 <body style="background-color: black; color:white">
-<?php include_once __DIR__ ."/header.php";?>
+  <?php include_once __DIR__ . "/header.php"; ?>
 
   <div class="hero">
 
@@ -40,47 +41,44 @@ flex-wrap:wrap;
 
     <div id="hero-heading">
       <p id="hero-title">CHASE DREAMS ... BUT IN HEELS</p>
-
-      <button id="shop-button"> <a href="shop.php">SHOP</a></button>
-
     </div>
   </div>
 
   <section class="featured-products">
     <h4>FEATURED PRODUCTS</h4>
     <div class="container">
-    <?php
+      <?php
 
-require_once __DIR__ . "/model/product.php";
-session_start();
-$_SESSION['products'] = [];
+      require_once __DIR__ . "/model/product.php";
+      session_start();
+      $_SESSION['products'] = [];
 
-foreach ($rows as $row) {
-    $newHeels = new Heels(
-        $row['id'],
-        $row['name'],
-        $row['thumbnail'],
-        $row['look'],
-        $row['quantity'],
-        $row['price']
-    );
+      foreach ($rows as $row) {
+        $newHeels = new Heels(
+          $row['id'],
+          $row['name'],
+          $row['thumbnail'],
+          $row['look'],
+          $row['quantity'],
+          $row['price']
+        );
 
-    array_push($_SESSION['products'], $newHeels);
-}
+        array_push($_SESSION['products'], $newHeels);
+      }
 
-foreach ($_SESSION['products'] as $product) : ?>
+      foreach ($_SESSION['products'] as $product) : ?>
 
-    <div class="wrapper">
-        <img src="<?php echo $product->getLook() ?>">
-        <div class="form">
+        <div class="wrapper">
+          <img src="<?php echo $product->getLook() ?>">
+          <div class="form">
             <form action='' method='get'>
-                <button id="shop-button"><a href="shop.php?id=<?php echo htmlspecialchars($product->getId()) ?>">SHOP</a></button>
+              <button id="shop-button"><a href="shop.php?id=<?php echo htmlspecialchars($product->getId()) ?>">SHOP</a></button>
             </form>
+          </div>
         </div>
-    </div>
 
-<?php endforeach; ?>
-     
+      <?php endforeach; ?>
+
     </div>
 
   </section>
@@ -89,7 +87,7 @@ foreach ($_SESSION['products'] as $product) : ?>
     <p style="text-align: center;">Coming soon</p>
 
   </section>
-  <?php include_once __DIR__ ."/footer.php";?>
+  <?php include_once __DIR__ . "/footer.php"; ?>
 
 </body>
 
