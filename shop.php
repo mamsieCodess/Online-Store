@@ -2,6 +2,23 @@
 
 session_start();
 require_once __DIR__ . "/model/product.php";
+require_once __DIR__ . "/includes/cart.php";
+
+if (!isset($_SESSION['cartTotal'])) {
+    $_SESSION['cartTotal'] = clearCart();
+}
+
+if (isset($_POST['add'])) {
+    addToCart();
+}
+
+if (isset($_POST['delete'])) {
+    deleteFromCart();
+}
+
+if (isset($_POST['clear'])) {
+    clearCart();
+}
 
 /*if there is no post varibale storing the id data, to to the database and get a row of data 
 where it's id matches this id of the object from the previous page*/
@@ -43,7 +60,6 @@ if (isset($_GET['id'])) {
             margin: 0;
             color: white;
         }
-
         .shop-container {
             margin-top: 100px;
             padding: 20px;
@@ -54,11 +70,9 @@ if (isset($_GET['id'])) {
         }
 
         .shop-container div {
-            height: 450px;
-            width: 300px;
+         
             margin: 0 20px;
         }
-
         .image-wrapper {
             height: 450px;
             width: 300px;
@@ -66,50 +80,39 @@ if (isset($_GET['id'])) {
             background-size: contain;
             background-repeat: no-repeat;
         }
-
         .description {
             padding: 10px;
             text-align: center;
             font-family: "Lexend Giga", sans-serif;
         }
-
         #title {
-            margin-bottom: 100px;
             color: #ff1e00;
+            margin-bottom: 40px;
         }
 
         #add-to-cart {
             margin-top: 10px;
             background-color: #ff1e00;
-        }
-
-        #add-to-cart a {
             text-decoration: none;
             color: black;
-            padding: 20px;
             font-size: large;
         }
-
         #add-to-cart:hover {
             background-color: #ffffff;
-        }
-
-        #add-to-cart a:hover {
             color: #ff1e00;
         }
 
+        #cart-button{
+            margin-top: 20px;
+        }
         @media screen and (max-width:900px) {
             .shop-container {
                 margin-top: 200px;
             }
-
             .shop-container div {
-                height: 300px;
+                height: 400px;
                 width: 250px;
-
             }
-
-
         }
     </style>
 </head>
@@ -121,16 +124,33 @@ if (isset($_GET['id'])) {
         <div class="description">
             <span>
                 <p id="title"><?php echo  $newheels->getName() ?></p>
+               
             </span>
             <span>
-            <p><?php echo $newheels->displayStock()?></p>
-            <?php if($newheels->getQuantity() != 0){
-                echo '<p>Price: R '.$newheels->getPrice().'</p>
-                <form action="">
-                <button id="add-to-cart" value="<?php echo $newheels->getPrice()?>"><a href="">Add to Cart</a></button>
-            </form>' ;
-            }?>
-                
+                <p><?php echo $newheels->displayStock().'('.$newheels->getQuantity().')'?></p>
+
+                <?php if ($newheels->getQuantity() != 0) : ?>
+                    <p>Price: R <?php echo $newheels->getPrice() ?></p>
+
+                    <form action="" method="POST">
+                        <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="add">Add to Cart</button>
+                    </form>
+
+                    <form action="" method="POST">
+                        <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="delete">Dlete From Cart</button>
+                    </form>
+                    <form action="" method="POST">
+                        <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="clear">Clear Cart</button>
+                    </form>
+
+                <?php endif ?>
+
+                <form action="cart.php" method="get" class="cart-form">
+        <input type="hidden" name="cart" value="<?php echo $_SESSION['cartTotal'];?>">
+        <button type="submit" id="cart-button">
+            View Cart
+        </button>
+    </form>
             </span>
         </div>
     </div>
