@@ -33,7 +33,6 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
             position:relative;
             height: 350px;
             width: 250px;
-            margin: 10px;
         }
 
         img {
