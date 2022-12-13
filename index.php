@@ -23,6 +23,7 @@ $rows = $result->fetch_all(MYSQLI_BOTH);
     .container {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .container img {
