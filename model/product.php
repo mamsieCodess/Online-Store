@@ -85,17 +85,6 @@ class Heels{
 
     //methods
 
-   /* public static function createHeelFromDb($row) {
-
-       $heel = new Heels($row->name, $row->image, $row->price, $row->look);
-        $heel->setId($row->id);
-        $heel->setQuantity($row->quantity);
-
-        return $heel;
-    }*/
-
-
-    // returns "true" if car is able to be sold and" false" if car is out of stock
     public function sellHeels() {
 
         if ($this->quantity) {
@@ -107,15 +96,14 @@ class Heels{
             return false;
         }
     }
-    
-    // return templates to display whether car is available to purchase or not
+  
     public function displayStock() {
 
         if ( $this->quantity > 0 ) {
-            return "<li style='color:green;'>In stock</li>";
+            return "<p style='color:green;'>In stock</p>";
             
         } else if( $this->quantity == 0) {
-            return "<li style='color:red;'>Out of stock</li>";
+            return "<p style='color:#ff1e00;'>Out of stock</p>";
         }
     }
 
