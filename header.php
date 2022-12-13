@@ -16,7 +16,9 @@
         </div>
         <div class="cart-options">
             <ul>
-                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                <li><i class="fa-solid fa-cart-shopping"><span style="padding: 0 5px;font-size:small">
+                <?php echo $_SESSION['cartTotal']; ?>
+                </span></i></li>
                 <li><i class="fa-solid fa-user"></i> </li>
             </ul>
 
