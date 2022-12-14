@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +31,7 @@
 <?php include_once __DIR__ . "/header.php"; ?>
     <div class="cart">
        <h3>Your cart:</h3>
+       <p>Amount due is: R <?php echo  $_SESSION['cartTotal']; ?></p>
     </div>
     <?php include_once __DIR__ . "/footer.php"; ?>
 </body>
