@@ -137,7 +137,7 @@ if (isset($_GET['id'])) {
                     </form>
 
                     <form action="" method="POST">
-                        <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="delete">Dlete From Cart</button>
+                        <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="delete">Remove from cart</button>
                     </form>
                     <form action="" method="POST">
                         <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="clear">Clear Cart</button>
