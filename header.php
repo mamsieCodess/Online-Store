@@ -1,3 +1,4 @@
+<?php session_start();?>
 <div class="header">
         <div class="logo">
             <a href="index.php" id="logo">
@@ -20,6 +21,9 @@
                 <?php echo $_SESSION['cartTotal']; ?>
                 </span></i></li>
                 <li><i class="fa-solid fa-user"></i> </li>
+                <?php if (isset($_SESSION['userId']) ):?>
+                    <li><a href="logout.php">Logout</a></li>
+                    <?php endif ?>
             </ul>
 
         </div>
