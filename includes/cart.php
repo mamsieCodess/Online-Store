@@ -1,6 +1,8 @@
 <?php
 function addToCart() {
-    $_SESSION['cartTotal'] = $_POST['add'] + $_SESSION['cartTotal'];
+    $_SESSION['cartTotal'] = $_SESSION['cartTotal'] + ($_POST['add'] * $_POST['quantity'] ) ;
+
+
 }
 
 function deleteFromCart() {
