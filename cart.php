@@ -1,4 +1,6 @@
-<?php session_start()?>
+<?php session_start();
+ include "includes/config/db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +34,23 @@
     <div class="cart">
        <h3>Your cart:</h3>
        <p>Amount due is: R <?php echo  $_SESSION['cartTotal']; ?></p>
+
+       <?php
+$userId = $_SESSION['userId'];
+// Display the items in the cart
+$query = "SELECT `*` FROM `cart` WHERE `customer_id` = '$customer_id'";
+$result = $db->query($query);
+echo '<table>';
+echo '<tr><th>Item</th><th>Quantity</th><th>Price</th></tr>';
+while ($row = $result->fetch_assoc()) {
+  echo '<tr>';
+  echo '<td>' . $row['item_name'] . '</td>';
+  echo '<td>' . $row['item_price'] . '</td>';
+  echo '<td>' . $row['quantity_selected'] . '</td>';
+  echo '</tr>';
+}
+echo '</table>';
+?>
     </div>
     <?php include_once __DIR__ . "/footer.php"; ?>
 </body>
