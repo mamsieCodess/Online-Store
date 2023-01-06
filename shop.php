@@ -4,23 +4,12 @@ session_start();
 require_once __DIR__ . "/model/product.php";
 require_once __DIR__ . "/includes/cart.php";
 
-if (!isset($_SESSION['cartTotal'])) {
-    $_SESSION['cartTotal'] = clearCart();
-}
-
-if (isset($_POST['add'])) {
-    addToCart();
-}
-
-if (isset($_POST['delete'])) {
-    deleteFromCart();
-}
-
-if (isset($_POST['clear'])) {
-    clearCart();
-}
-
-/*if there is no post varibale storing the id data, to to the database and get a row of data 
+//to be able to add things to a cart you ahve to be logged in
+if(!isset($_SESSION['userId'])){
+    header('location:login.php');
+    exit;
+}else{
+    /*if there is no post variable storing the id data, to to the database and get a row of data 
 where it's id matches this id of the object from the previous page*/
 if (isset($_GET['id'])) {
     $_SESSION['product'] = [];
@@ -40,6 +29,39 @@ if (isset($_GET['id'])) {
     );
     array_push($_SESSION['product'], $newHeels);
 }
+
+if (!isset($_SESSION['cartTotal'])) {
+    $_SESSION['cartTotal'] = clearCart();
+}
+
+if (isset($_POST['add'])) {
+    addToCart();
+    $customer_id = $_SESSION['userId'];
+    $item_name = $newheels->getName();
+    $item_price  = $newheels->getPrice();
+    $item_quantity =  $_POST['quantity'];
+
+    $sql = "INSERT INTO `cart`(customer_id,item_name,item_price,quantity_selected)
+    VALUES (?,?,?,?) "; //placeholders
+        $stmt = $conn->prepare($sql); //prepared statement
+        $stmt->bind_param('isii',$customer_id,$item_name ,$item_price, $item_quantity,); //bind parameters
+         //then start a session with the entered details in session variables
+         session_start();
+         $_SESSION['quantity'] = $item_quantity;
+        $stmt->execute();
+}
+
+if (isset($_POST['delete'])) {
+    deleteFromCart();
+}
+
+if (isset($_POST['clear'])) {
+    clearCart();
+}
+
+}
+
+
 
 ?>
 <!DOCTYPE html>
@@ -123,7 +145,7 @@ if (isset($_GET['id'])) {
         <div class="image-wrapper"></div>
         <div class="description">
             <span>
-                <p id="title"><?php echo  $newheels->getName() ?></p>
+                <p id="title"><?php echo  $newheels->getName()?></p>
                
             </span>
             <span>
@@ -133,6 +155,7 @@ if (isset($_GET['id'])) {
                     <p>Price: R <?php echo $newheels->getPrice() ?></p>
 
                     <form action="" method="POST">
+                        <input type="number" id="quantity" name="quantity" placeholder="quantity">
                         <button type="submit" id="add-to-cart" value='<?php echo $newheels->getPrice() ?>' name="add">Add to Cart</button>
                     </form>
 
