@@ -44,7 +44,7 @@ if (isset($_POST['add'])) {
     $sql = "INSERT INTO `cart`(customer_id,item_name,item_price,quantity_selected)
     VALUES (?,?,?,?) "; //placeholders
         $stmt = $conn->prepare($sql); //prepared statement
-        $stmt->bind_param('isii',$customer_id,$item_name ,$item_price, $item_quantity,); //bind parameters
+        $stmt->bind_param('isii',$customer_id,$item_name ,$item_price, $item_quantity); //bind parameters
          //then start a session with the entered details in session variables
          session_start();
          $_SESSION['quantity'] = $item_quantity;
