@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Lexend+Giga:wght@400;600&family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="includes/css/styles.css">
     <script src="https://kit.fontawesome.com/648e6e8434.js" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuqJ9MaG4ECPa0chw2f5dQqqvDBx0UDnI"></script>
 
     <style>
         .contact-page {
             margin-top: 120px;
-            height: fit-content;
             padding: 40px 100px;
             text-align: center;
         }
@@ -38,6 +38,9 @@
         .contact-page a:hover {
             color: white;
         }
+        #google-map{
+            height: 100%;
+        }
 
         @media screen and (max-width: 900px) {
 
@@ -49,7 +52,7 @@
     </style>
 </head>
 
-<body>
+<body onload='initMap()'>
 <?php include_once __DIR__ . "/header.php";?>
     <div class="contact-page">
 
@@ -67,8 +70,11 @@
         <span><i class="fa-brands fa-linkedin"></i>
             <p> <a href="https://www.linkedin.com/in/slaydragons">@slaydragons</a> </p>
         </span>
+
+        <div id="google-map"></div>
     </div>
     <?php include_once __DIR__ . "/footer.php";?>
+    <script src="includes/js/main.js"></script>
 </body>
 
 </html>
